@@ -1,0 +1,67 @@
+.vsm-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  font: 600 13px/1 system-ui, -apple-system, sans-serif;
+  color: #fff;
+  background: rgba(20, 20, 20, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  user-select: none;
+}
+.vsm-badge.vsm-show,
+.vsm-badge:hover,
+.vsm-badge:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+}
+.vsm-badge button {
+  all: unset;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.vsm-badge button:hover { background: rgba(255, 255, 255, 0.22); }
+.vsm-badge .vsm-input {
+  all: unset;
+  box-sizing: border-box;
+  width: 42px;
+  padding: 3px 0;
+  text-align: center;
+  color: #fff;
+  border-radius: 6px;
+  cursor: text;
+}
+.vsm-badge .vsm-input:hover { background: rgba(255, 255, 255, 0.12); }
+.vsm-badge .vsm-input:focus { background: rgba(255, 255, 255, 0.25); }
+.vsm-badge .vsm-x { opacity: 0.7; margin: 0 4px 0 -2px; }
+
+/* livelier badge */
+.vsm-badge {
+  background: linear-gradient(rgba(16, 18, 28, 0.85), rgba(16, 18, 28, 0.85)) padding-box,
+              linear-gradient(135deg, #3ee0c0, #7c8cff, #ff6f91) border-box;
+  border: 1.5px solid transparent;
+  transform: translateY(-6px) scale(0.95);
+  transition: opacity 0.2s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.vsm-badge.vsm-show,
+.vsm-badge:hover,
+.vsm-badge:focus-within { transform: none; }
+.vsm-badge button:active { transform: scale(0.8); }
+.vsm-badge button { transition: background 0.15s, transform 0.15s; }

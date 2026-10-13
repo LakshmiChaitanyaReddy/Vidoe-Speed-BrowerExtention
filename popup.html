@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+        <header class="enter" style="--i:0">
+      <img class="logo" src="icons/icon48.png" alt="" />
+      <div>
+        <h1>Zoomie</h1>
+        <p class="site"><i class="dot" id="dot"></i><span id="host">—</span></p>
+      </div>
+    </header>
+
+    <section class="dial enter" style="--i:1">
+      <svg viewBox="0 0 200 108" class="gaugeSvg">
+        <defs>
+          <linearGradient id="grad" x1="0" x2="1">
+            <stop offset="0" stop-color="#5b8cff" />
+            <stop offset="1" stop-color="#8b7bff" />
+          </linearGradient>
+        </defs>
+        <path class="track" d="M20 100 A80 80 0 0 1 180 100" />
+        <path class="fill" id="arc" d="M20 100 A80 80 0 0 1 180 100" />
+      </svg>
+      <div class="readout" id="readout"><span id="big">1</span><small>×</small></div>
+      <div class="label" id="label">Normal</div>
+    </section>
+
+    <div class="sliderBox enter" style="--i:2">
+      <input id="rate" type="range" min="0.25" max="4" step="0.05" value="1" />
+      <div class="ticks"><span>0.25x</span><span>1x</span><span>2x</span><span>3x</span><span>4x</span></div>
+    </div>
+
+    <div class="chips enter" id="chips" style="--i:3"></div>
+
+    <div class="custom enter" style="--i:4">
+      <input id="num" type="text" inputmode="decimal" placeholder="Custom speed, e.g. 2.75" aria-label="Custom speed" />
+      <button id="setCustom">SET</button>
+    </div>
+    <p class="msg" id="msg"></p>
+
+    <section class="remember enter" id="rememberCard" style="--i:5">
+      <div>
+        <div class="title">Remember for this site</div>
+        <div class="status" id="status">INACTIVE</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="remember" />
+        <span class="tr"><span class="knob"></span><span class="state" id="state">OFF</span></span>
+      </label>
+    </section>
+
+    <div class="buttons enter" style="--i:6">
+      <button id="resetAll">↺ Reset all</button>
+      <button id="viewSaved">☰ Saved sites</button>
+    </div>
+
+    <section id="saved" class="saved" hidden></section>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
